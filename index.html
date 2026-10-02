@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Sky Defender</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="game-shell">
+      <div id="hud">
+        <div class="hud-panel">
+          <span class="label">SCORE</span>
+          <span id="score">0</span>
+        </div>
+        <div class="hud-panel">
+          <span class="label">LIVES</span>
+          <span id="lives">3</span>
+        </div>
+      </div>
+
+      <div id="overlay" class="visible">
+        <div class="panel">
+          <h1>Neon Sky Defender</h1>
+          <p>WASD / 矢印で移動。スペースで攻撃。<br />敵を撃ち落としてスコアを伸ばそう！</p>
+          <button id="start-button">START</button>
+        </div>
+      </div>
+
+      <div id="game-root"></div>
+    </div>
+
+    <script type="module" src="game.js"></script>
+  </body>
+</html>

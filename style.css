@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #05111d 0%, #020812 45%, #01060b 100%);
+  color: #eafcff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+#game-shell {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+#game-root {
+  width: 100%;
+  height: 100%;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#hud {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  display: flex;
+  gap: 12px;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.hud-panel {
+  min-width: 110px;
+  padding: 10px 14px;
+  border: 1px solid rgba(95, 229, 255, 0.6);
+  border-radius: 10px;
+  background: rgba(4, 15, 20, 0.5);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 20px rgba(67, 206, 255, 0.26);
+}
+
+.label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: #86ddff;
+  margin-bottom: 4px;
+}
+
+#score,
+#lives {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ecfeff;
+}
+
+#overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(2, 10, 16, 0.52);
+  z-index: 30;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+#overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.panel {
+  width: min(520px, calc(100% - 40px));
+  padding: 32px 28px 26px;
+  border-radius: 18px;
+  border: 1px solid rgba(123, 229, 255, 0.7);
+  background: rgba(6, 18, 26, 0.74);
+  box-shadow: 0 0 32px rgba(64, 204, 255, 0.25);
+  text-align: center;
+}
+
+.panel h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #8ae7ff;
+  text-shadow: 0 0 18px rgba(101, 219, 255, 0.7);
+}
+
+.panel p {
+  margin: 0 0 20px;
+  line-height: 1.7;
+  color: #d9f5ff;
+}
+
+#start-button {
+  border: 1px solid rgba(122, 224, 255, 0.8);
+  background: linear-gradient(135deg, rgba(78, 200, 255, 0.25), rgba(112, 90, 255, 0.25));
+  color: #f4feff;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  padding: 14px 28px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 0 18px rgba(97, 197, 255, 0.32);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#start-button:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 0 28px rgba(97, 197, 255, 0.45);
+}
